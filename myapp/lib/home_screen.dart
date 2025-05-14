@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'audio_manager.dart';
+import 'alphabet_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -39,8 +40,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 // Алфавит
                 GestureDetector(
                   onTap: () {
-                    print('Нажата кнопка Алфавит');
-                    // Здесь можно добавить переход на нужный экран
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const AlphabetScreen()),
+                    );
                   },
                   child: Image.asset(
                     'assets/alphabet.png',
@@ -88,8 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               child: Image.asset(
                 'assets/param.png',
-                width: 45,
-                height: 45,
+                width: 35,
+                height: 35,
               ),
             ),
           ),
