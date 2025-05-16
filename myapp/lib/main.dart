@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'splash_screen.dart';
+import 'screens/splash_screen.dart';
 import 'audio_manager.dart';
 
 void main() async {

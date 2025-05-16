@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'database_helper.dart';
-import 'letter.dart';
-import 'audio_manager.dart';
+import '../models/letter.dart';
+import '../audio_manager.dart';
 
 class AlphabetScreen extends StatefulWidget {
   const AlphabetScreen({Key? key}) : super(key: key);

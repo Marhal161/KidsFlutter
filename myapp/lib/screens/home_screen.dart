@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'audio_manager.dart';
+import '../audio_manager.dart';
 import 'alphabet_screen.dart';
+import 'numbers_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -55,8 +56,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 // Цифры
                 GestureDetector(
                   onTap: () {
-                    print('Нажата кнопка Цифры');
-                    // Здесь можно добавить переход на нужный экран
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const NumbersScreen()),
+                    );
                   },
                   child: Image.asset(
                     'assets/numbers.png',

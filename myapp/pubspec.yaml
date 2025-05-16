@@ -63,6 +63,10 @@ flutter:
     - assets/audio/
     - assets/database.db
     - assets/alphabet/
+    - assets/numbers/
+    - assets/numbersAudio/
+    - assets/numbers/big/
+    - assets/numbers/small/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

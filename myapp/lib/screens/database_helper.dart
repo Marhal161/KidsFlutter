@@ -46,6 +46,23 @@ class DatabaseHelper {
     return await db.query('alphabet', orderBy: 'letter');
   }
 
+  // Получить все цифры
+  Future<List<Map<String, dynamic>>> getAllNumbers() async {
+    final db = await database;
+    return await db.query('numbers', orderBy: 'number');
+  }
+
+  // Получить конкретную цифру
+  Future<Map<String, dynamic>?> getNumber(int number) async {
+    final db = await database;
+    List<Map<String, dynamic>> results = await db.query(
+      'numbers',
+      where: 'number = ?',
+      whereArgs: [number],
+    );
+    return results.isNotEmpty ? results.first : null;
+  }
+
   // Получить конкретную букву
   Future<Map<String, dynamic>?> getLetter(String letter) async {
     final db = await database;
