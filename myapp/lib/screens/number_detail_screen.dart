@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/number.dart';
 import '../audio_manager.dart';
+import 'game_screen.dart';
 
 class NumberDetailScreen extends StatelessWidget {
   final Number number;
@@ -21,16 +22,36 @@ class NumberDetailScreen extends StatelessWidget {
             ),
           ),
           Center(
-            child: GestureDetector(
-              onTap: () {
-                AudioManager().playSound(number.audioPath);
-              },
-              child: Image.asset(
-                number.imageBPath,
-                width: screenWidth * 0.5,
-                height: screenHeight * 0.5,
-                fit: BoxFit.contain,
-              ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    AudioManager().playSound(number.audioPath);
+                  },
+                  child: Image.asset(
+                    number.imageBPath,
+                    width: screenWidth * 0.5,
+                    height: screenHeight * 0.5,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                const SizedBox(height: 30),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => GameScreen(number: number)),
+                    );
+                  },
+                  child: Image.asset(
+                    'assets/game.png',
+                    width: 35,
+                    height: 35,
+                  ),
+                ),
+                const SizedBox(height: 5),
+              ],
             ),
           ),
           Positioned(

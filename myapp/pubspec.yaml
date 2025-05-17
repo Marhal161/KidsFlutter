@@ -64,6 +64,7 @@ flutter:
     - assets/database.db
     - assets/alphabet/
     - assets/numbers/
+    - assets/numbersAudio/found_num/
     - assets/numbersAudio/
     - assets/numbers/big/
     - assets/numbers/small/
